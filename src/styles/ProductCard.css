@@ -1,0 +1,7 @@
+.product-card-container{
+    border: 1px solid black;
+}
+
+.product-image img{
+    height: 150px;
+}
