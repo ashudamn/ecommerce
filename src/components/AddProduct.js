@@ -1,5 +1,8 @@
 import { Form, Formik, Field } from "formik";
 import * as Yup from "yup";
+import { createNewProduct } from "../services/productsService";
+
+
 function AddProduct() {
   const validateProductSchema = Yup.object().shape({
     name: Yup.string().required("product name is required"),
@@ -20,6 +23,12 @@ function AddProduct() {
         validationSchema={validateProductSchema}
         onSubmit={(values) => {
           console.log(values);
+          createNewProduct(values)
+          .then(data=>{
+            alert(`Added product with id ${JSON.stringify(data.id)}`);
+          }).catch(error=>{
+            alert(`Error: ${JSON.stringify(error)}`);
+          });
         }}
       >
         {(props) => (

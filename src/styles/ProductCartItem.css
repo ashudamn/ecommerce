@@ -1,0 +1,16 @@
+.product-cart-container{
+    border: 1px solid black;
+}
+
+.product-image-container img{
+    height: 200px;
+}
+.product-image-container label{
+    display: block;
+}
+.product-common{
+    padding: 5px;
+}
+.product-common label{
+  font-weight: bold;
+}

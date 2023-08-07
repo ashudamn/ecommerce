@@ -1,0 +1,16 @@
+export default function productReducer(state={products:[]},action){
+    switch(action.type){
+        case "ADD_PRODUCT":
+            return {products:[...state.products,action.payload.product]};
+        case "REMOVE_PRODUCT":
+            const id=action.payload.productId;
+            const existingProduct=state.products.find(product=>product.id===id);
+            if(existingProduct){
+                const filteredProducts=state.products.filter(product=>product.id!==id);
+                return {products:filteredProducts}
+            }
+            return state; 
+        default:
+            return state;
+    }
+}

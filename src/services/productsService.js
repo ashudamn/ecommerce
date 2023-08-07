@@ -20,4 +20,22 @@ async function getProductById(id){
   }
 }
 
-export { getAllProducts,getProductById };
+async function createNewProduct(product){
+  try{
+    const response=await fetch(PRODUCTS_API,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify(product)
+    });
+    const result=await response.json();
+    console.log(result);
+    return result;
+  }catch(error){
+    console.log(error);
+    throw error;
+  }
+}
+
+export { getAllProducts,getProductById,createNewProduct };
