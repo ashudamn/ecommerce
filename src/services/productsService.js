@@ -38,4 +38,35 @@ async function createNewProduct(product){
   }
 }
 
-export { getAllProducts,getProductById,createNewProduct };
+async function updateProduct(product){
+  try{
+    const response=await fetch(`${PRODUCTS_API}/${product.id}`,{
+      method:"PUT",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify(product)
+    });
+    const result=await response.json();
+    console.log(result);
+    return result;
+  }catch(error){
+    console.log(error);
+    throw error;
+  }
+}
+
+async function deleteProduct(productId){
+  try{
+    const response=await fetch(`${PRODUCTS_API}/${productId}`,{
+      method:"DELETE"
+    });
+    const result=await response.json();
+    console.log(result);
+    return result;
+  }catch(error){
+    console.log(error);
+    throw error;
+  }
+}
+export { getAllProducts,getProductById,createNewProduct,updateProduct,deleteProduct };

@@ -1,0 +1,18 @@
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: gainsboro;
+}
+.nav-to-left-end{
+    display: flex;
+
+}
+.nav-link-container{
+    padding: 10px;
+    border: 1px solid black;
+}
+.nav-link-container:hover{
+    cursor: pointer;
+    background-color: grey;
+}

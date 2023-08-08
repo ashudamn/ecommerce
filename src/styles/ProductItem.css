@@ -14,3 +14,6 @@
 .product-common label{
   font-weight: bold;
 }
+.product-container{
+    padding: 10px;
+}
