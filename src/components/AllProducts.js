@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../services/productsService";
 import ProductCard from "./ProductCard";
+import { ERROR } from "../assets/constants";
 function AllProducts() {
   const [products, setProducts] = useState(null);
   const [sorting, setSorting] = useState(null);
@@ -16,7 +17,7 @@ function AllProducts() {
         setOriginalProducts(result);
       })
       .catch((err) => {
-        alert("ERROR: " + err.message);
+        alert(`${ERROR}  ${err.message}`);
         console.log(err);
       });
   }, []);

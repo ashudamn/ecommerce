@@ -1,3 +1,19 @@
-const PRODUCTS_API="https://my-json-server.typicode.com/ashudamn/fakeProductsJson/products";
-
-export {PRODUCTS_API};
+const PRODUCTS_API =
+  "https://my-json-server.typicode.com/ashudamn/fakeProductsJson/products";
+const PRODUCT_ADDED_TO_CART = "PRODUCT ADDED TO CART";
+const PRODUCT_REMOVED_FROM_CART = "PRODUCT REMOVED FROM CART";
+const PRODUCT_DELETED = "PRODUCT DELETED";
+const UPDATE_SUCCESSFUL = "UPDATE SUCCESSFUL FOR ID";
+const ADDED_SUCCESSFUL = "ADDED PRODUCT WITH ID";
+const FAILED = "FAILED";
+const ERROR = "ERROR";
+export {
+  PRODUCTS_API,
+  PRODUCT_ADDED_TO_CART,
+  PRODUCT_REMOVED_FROM_CART,
+  PRODUCT_DELETED,
+  UPDATE_SUCCESSFUL,
+  ADDED_SUCCESSFUL,
+  FAILED,
+  ERROR,
+};

@@ -6,6 +6,7 @@ import { addProduct, removeProduct } from "../store/actions/productActions";
 import { useState } from "react";
 import FormComponent from "./FormComponent";
 import { deleteProduct } from "../services/productsService";
+import { PRODUCT_ADDED_TO_CART, PRODUCT_REMOVED_FROM_CART,PRODUCT_DELETED } from "../assets/constants";
 
 export default function ProductItem({
   product,
@@ -27,9 +28,11 @@ export default function ProductItem({
   }
   function addToCart() {
     dispatch(addProduct(product));
+    alert(PRODUCT_ADDED_TO_CART);
   }
   function deleteFromCart() {
     dispatch(removeProduct(product.id));
+    alert(PRODUCT_REMOVED_FROM_CART);
   }
   function backToDetailView(updatedProduct) {
     setProductState(updatedProduct);
@@ -40,7 +43,7 @@ export default function ProductItem({
       .then((result) => {
         console.log(result);
         if (result) {
-            alert("product deleted");
+            alert(PRODUCT_DELETED);
           setProductState(null);
         }
       })

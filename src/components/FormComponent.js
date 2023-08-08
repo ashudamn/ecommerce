@@ -3,6 +3,8 @@ import * as Yup from "yup";
 
 import { createNewProduct, updateProduct } from "../services/productsService";
 
+import { ADDED_SUCCESSFUL, ERROR, FAILED, UPDATE_SUCCESSFUL } from "../assets/constants";
+
 export default function FormComponent({operation,initValues,onSuccessFullEdit}){
     const validateProductSchema = Yup.object().shape({
         title: Yup.string().required("product title is required"),
@@ -31,18 +33,18 @@ export default function FormComponent({operation,initValues,onSuccessFullEdit}){
                 .then(data=>{
                     console.log(data);
                     onSuccessFullEdit(data);
-                    alert('updated success fully '+data.id);
+                    alert(UPDATE_SUCCESSFUL+data.id);
                 }).catch(error=>{
                     console.log(error);
-                    alert('failed '+error);
+                    alert(`${FAILED} ${error.message}`);
                 });
               }else{
               createNewProduct(values)
               .then(data=>{
-                alert(`Added product with id ${JSON.stringify(data.id)}`);
+                alert(`${ADDED_SUCCESSFUL} ${JSON.stringify(data.id)}`);
               }).catch(error=>{
                 console.log(error);
-                alert(`Error: ${JSON.stringify(error)}`);
+                alert(`${ERROR}: ${JSON.stringify(error)}`);
               });
             }
             }}
