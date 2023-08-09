@@ -6,6 +6,7 @@ import Navigation from './Navigation';
 import AddOrEditProduct from './AddOrEditProduct';
 import Cart from './Cart';
 import ProductDetails from './ProductDetails';
+import { PageNotFound } from './PageNotFound';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/AddOrEditProduct" Component={AddOrEditProduct}/>
           <Route exact path='/cart' Component={Cart}/>
           <Route exact path='/productDetails/:id' Component={ProductDetails}/>
+          <Route path='*' Component={PageNotFound}/>
         </Routes>
       </div>
      </HashRouter>

@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+.text-field{
+    padding: 10px;
+    margin: 10px 0px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+}
+
+button {
+
+    /* remove default behavior */
+    appearance:none;
+    -webkit-appearance:none;
+  
+    /* usual styles */
+    padding:10px;
+    border:none;
+    background-color:#3F51B5;
+    color:#fff;
+    font-weight:600;
+    border-radius:5px;
+    width: 100%;
+  }
+
+  .add-edit-container{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+  .form-container{
+    width: 50%;
+  }
+
+  .field-errors{
+    color: brown;
+    padding-bottom: 5px;
+  }

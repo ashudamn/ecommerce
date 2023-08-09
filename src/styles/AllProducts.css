@@ -1,0 +1,19 @@
+.btn-sorted{
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: darkgrey;
+    border: none;
+}
+.btn-sort-cancel{
+    border-radius: 5px;
+    background-color: gray;
+    border: none;
+}
+.sort-container{
+    display: flex;
+    justify-content: end;
+}
+.all-products-container{
+    padding: 5px;
+}

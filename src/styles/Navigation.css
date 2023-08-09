@@ -2,7 +2,7 @@
 .nav-container{
     display: flex;
     justify-content: space-between;
-    background-color: gainsboro;
+    background-color: #6b7fd7;
 }
 .nav-to-left-end{
     display: flex;
@@ -14,5 +14,5 @@
 }
 .nav-link-container:hover{
     cursor: pointer;
-    background-color: grey;
+    background-color: #d2cca1;
 }
