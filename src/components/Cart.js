@@ -3,7 +3,7 @@ import ProductItem from "./ProductItem";
 
 function Cart() {
   const products = useSelector((state) => state.products);
-  console.log(products);
+  console.log("products in cart from state",products);
   return (
     <>{
         products.length===0 && <div><h2>YOUR CART IS EMPTY</h2></div>

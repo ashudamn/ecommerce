@@ -6,13 +6,13 @@
     border: none;
 }
 .btn-sort-cancel{
-    border-radius: 5px;
+    border-radius: 30px;
     background-color: gray;
     border: none;
 }
 .sort-container{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .all-products-container{
     padding: 5px;

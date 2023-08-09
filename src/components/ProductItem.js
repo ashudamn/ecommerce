@@ -3,7 +3,7 @@ import "../styles/ProductItem.css";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import { addProduct, removeProduct } from "../store/actions/productActions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormComponent from "./FormComponent";
 import { deleteProduct } from "../services/productsService";
 import { PRODUCT_ADDED_TO_CART, PRODUCT_REMOVED_FROM_CART,PRODUCT_DELETED, ERROR } from "../assets/constants";
@@ -20,6 +20,9 @@ export default function ProductItem({
   let dispatch = useDispatch();
   let [productState, setProductState] = useState(product);
   let [showEditForm, setShowEditForm] = useState(false);
+  useEffect(()=>{
+    setProductState(product);
+  },[product])
   function moveToDetailsPage() {
     navigate(`/productDetails/${product.id}`);
   }
@@ -52,6 +55,7 @@ export default function ProductItem({
         alert(`${ERROR}:${error.message}`);
       });
   }
+  console.log("product item state",productState);
   return (
     <>
       {productState && (
